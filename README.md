@@ -1,7 +1,7 @@
 # Intro
 Azure Data Factory template parameters management is a guideline of how to manage parameters in Azure Data Factory since it could affect CI/CD workflow.
 
-# Current state
+# Current scenario
 
 The client has a pipeline that is executed with the configurations sent by a trigger. In that sense, it has dozens of triggers that are executed according to the file that reaches a storage account.
 
@@ -21,7 +21,7 @@ Based on best practices, when the ARM template parameter limit is reached, you a
 Additionally, the trigger generates its own metadata, storing in it the name of the storage account, container, file, among others. This metadata can be used in the pipeline as logic prior to the execution of the main activities.
 In this sense, the idea is to use an event trigger pipeline and obtain the metadata in the main pipeline to execute the activities according to the logic in the triggers. Seeking to transfer the logic of the triggers to the level of metadata and execution of the pipeline.
 
-script provided in source folder
+script provided in source folder (same as current scenario)
 
 # References
 
