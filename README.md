@@ -9,11 +9,18 @@ Likewise, they have 2 environments: development and production. They handle depl
 
 However, by continuing to build triggers, they reached the limit of parameters (256) supported by the ARM template. This is because several parameters are created per trigger, multiplying quickly.
 
+<img src="https://user-images.githubusercontent.com/92458075/188023623-d85ee468-984f-481f-8ed2-c829ec534457.png" alt="drawing" width="500"/>
+![image](https://user-images.githubusercontent.com/92458075/188023623-d85ee468-984f-481f-8ed2-c829ec534457.png)
+
+
 # Alternative 1 (workaround)
 
 A quick way out is to remove the parameters corresponding to the triggers from the ARM template. However, this will involve adding a step that replaces the Storage Account in the production environment with the corresponding one in production. Later, they might even hit the storage event type limit of 500, which will require revisiting the scenario.
 
 script provided in source folder
+
+<img src="https://user-images.githubusercontent.com/92458075/188023812-3f6d72a7-9e8f-4c5a-981c-614cd248a467.png" alt="drawing" width="500"/>
+![image](https://user-images.githubusercontent.com/92458075/188023812-3f6d72a7-9e8f-4c5a-981c-614cd248a467.png)
 
 # Alternative 2 (recommended)
 
@@ -22,6 +29,9 @@ Additionally, the trigger generates its own metadata, storing in it the name of 
 In this sense, the idea is to use an event trigger pipeline and obtain the metadata in the main pipeline to execute the activities according to the logic in the triggers. Seeking to transfer the logic of the triggers to the level of metadata and execution of the pipeline.
 
 script provided in source folder (same as current scenario)
+
+<img src="https://user-images.githubusercontent.com/92458075/188023906-321ba0ea-e680-496b-900a-031f159b7934.png" alt="drawing" width="500"/>
+![image](https://user-images.githubusercontent.com/92458075/188023906-321ba0ea-e680-496b-900a-031f159b7934.png)
 
 # References
 
