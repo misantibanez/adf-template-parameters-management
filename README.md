@@ -3,7 +3,7 @@ Azure Data Factory template parameters management is a guideline of how to manag
 
 # Current scenario
 
-The client has a pipeline that is executed with the configurations sent by a trigger. In that sense, it has dozens of triggers that are executed according to the file that reaches a storage account.
+The customer has a pipeline that is executed with the configurations sent by a trigger. In that sense, it has dozens of triggers that are executed according to the file that reaches a storage account.
 
 Likewise, they have 2 environments: development and production. They handle deployment automatically between environments.
 
